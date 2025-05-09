@@ -1,0 +1,124 @@
+<!-- 웹버전 관리 프로그램 -->
+<!DOCTYPE html>
+<html>
+<head> 
+    <meta charset="UTF-8">
+    <title>Musinsa Mobile</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <script src="may072_jQuery.js"></script>
+    
+    
+    <style>
+        .form-label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .form-input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body> 
+
+<!-- 메인 페이지 -->
+<div data-role="page" id="p1">
+    <div data-role="header" data-position="fixed">
+        <h1>Welcome to Musinsa</h1>
+    </div>
+    <div data-role="content">
+        <button>눌러봐</button>
+        <input placeholder="검색어 입력"><br>
+        <!-- 이 부분이 상품 목록 -->
+        <ul id="product-list" data-role="listview" data-inset="true" data-filter="true">
+            <!-- JS로 내용 삽입됨 -->
+        </ul>
+        <ul id="product-list">
+            <li data-role="list-divider">기능</li>
+            <li><a href="#regProduct">🔐 상품 추가</a></li>
+            <li><a href="#loginPage">🔐 로그인</a></li>
+            <li><a href="#registerPage">📝 회원가입</a></li>
+            <li><a href="#cartPage">🛒 장바구니</a></li>
+        </ul>
+        <!-- 스크립트는 여기 있어도 됩니다 -->
+        <script>
+        $(document).ready(function() {
+            getProductData(); // 페이지 켜지면 상품 데이터 자동 불러오기
+        });
+        </script>
+    </div>    
+</div>
+
+
+<!-- 상품추가 페이지 -->
+<div data-role="page" id="regProduct">
+    <div data-role="header" data-position="fixed">
+        <h1>상품 추가</h1>
+        <a href="#p1" data-icon="back" data-iconpos="notext" class="ui-btn-right">돌아가기</a>
+      </div>
+      
+    <div data-role="content">
+        <label class="form-label">ID</label>
+        <input type="text" placeholder="ID 입력" class="form-input" id="IDInput">
+        <label class="form-label">name</label>
+        <input type="text" placeholder="name 입력" class="form-input" id="nameInput">
+        <label class="form-label">brand_id</label>
+        <input type="text" placeholder="brand_id 입력" class="form-input" id="brand_idInput">
+        <label class="form-label">category_id</label>
+        <input type="text" placeholder="category_id 입력" class="form-input" id="category_idInput">
+        <label class="form-label">price</label>
+        <input type="text" placeholder="price 입력" class="form-input" id="priceInput">
+        <label class="form-label">p_image</label>
+        <input type="text" placeholder="p_image 입력" class="form-input" id="p_imageInput">
+        <label class="form-label">p_location</label>
+        <input type="text" placeholder="p_location 입력" class="form-input" id="p_locationInput">
+        <button id="regProductRN" data-role="button" data-theme="b">상품 추가하기</button>
+        
+    </div>
+</div>
+<!-- 로그인 페이지 -->
+<div data-role="page" id="loginPage">
+    <div data-role="header" data-position="fixed">
+        <h1>로그인</h1>
+    </div>
+    <div data-role="content">
+        <label class="form-label">아이디</label>
+        <input type="text" placeholder="아이디 입력" class="form-input">
+        <label class="form-label">비밀번호</label>
+        <input type="password" placeholder="비밀번호 입력" class="form-input">
+        <a href="#p1" data-role="button" data-theme="b">로그인</a>
+    </div>
+</div>
+
+<!-- 회원가입 페이지 -->
+<div data-role="page" id="registerPage">
+    <div data-role="header" data-position="fixed">
+        <h1>회원가입</h1>
+    </div>
+    <div data-role="content">
+        <label class="form-label">아이디</label>
+        <input type="text" placeholder="아이디 입력" class="form-input">
+        <label class="form-label">비밀번호</label>
+        <input type="password" placeholder="비밀번호 입력" class="form-input">
+        <label class="form-label">비밀번호 확인</label>
+        <input type="password" placeholder="비밀번호 재입력" class="form-input">
+        <label class="form-label">이메일</label>
+        <input type="email" placeholder="이메일 입력" class="form-input">
+        <a href="#p1" data-role="button" data-theme="b">가입하기</a>
+    </div>
+</div>
+
+<!-- 장바구니 페이지 -->
+<div data-role="page" id="cartPage">
+    <div data-role="header" data-position="fixed">
+        <h1>장바구니</h1>
+    </div>
+    <div data-role="content">
+        <p>장바구니가 비어 있습니다.</p>
+        <a href="#p1" data-role="button" data-theme="a">← 메인으로</a>
+    </div>
+</div>
+
+</body>
+</html>
