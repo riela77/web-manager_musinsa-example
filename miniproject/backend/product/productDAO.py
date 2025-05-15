@@ -27,7 +27,9 @@ class productDAO:
             if con and cur:
                 kimDBmanager.closeConCur(con, cur)
 
-    def product_reg(p_id, p_name, p_brand_id, p_category_id, p_price, p_image, p_location):
+   # 함수세팅에 self뻬먹지말기!!!!
+    def product_reg(self,p_id, p_name, p_brand_id, p_category_id, p_price, p_image, p_location):
+ 
         con, cur = None, None
         try:
             con, cur = kimDBmanager.makeConCur("KIMCR/1@195.168.9.126:1521/xe")
@@ -47,8 +49,9 @@ class productDAO:
         finally:
             if con and cur:
                 kimDBmanager.closeConCur(con, cur)
-
-    def user_reg(id,pw):
+                
+# 함수세팅에 self뻬먹지말기!!!!
+    def user_reg(self, id,pw):
         con, cur = None, None
         try:
             con, cur = kimDBmanager.makeConCur("KIMCR/1@195.168.9.126:1521/xe")
